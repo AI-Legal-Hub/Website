@@ -59,6 +59,19 @@
         .nav-link:hover:after {
             width: 100%;
         }
+        .faq-toggle i {
+            transition: transform 0.3s ease;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .faq-content {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .form-input:focus {
             outline: none;
             box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
@@ -120,6 +133,17 @@
                         <div class="bg-urgent h-4 rounded-full urgent-badge" style="width: 90%"></div>
                     </div>
                     <p class="text-xs text-white/70">Only 1 spot remaining - next availability in 3 months</p>
+                    <div class="mt-4 flex items-center">
+                        <div class="mr-3">
+                            <div class="w-10 h-10 rounded-full bg-urgent flex items-center justify-center">
+                                <i class="fas fa-exclamation text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">High Demand Alert</p>
+                            <p class="text-xs text-white/80">Last quarter we turned away 27 consulting clients due to capacity</p>
+                        </div>
+                    </div>
                     <div class="mt-4 p-3 bg-urgent/10 rounded-lg border border-urgent/30">
                         <p class="text-urgent text-sm font-bold flex items-center">
                             <i class="fas fa-clock mr-2"></i>
@@ -131,8 +155,28 @@
         </div>
     </section>
 
-    <!-- Clients/Partners Section -->
-    <section class="bg-gray-50 py-8">
+    <!-- Results & Partners Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">150+</div>
+                    <div class="text-gray-600">Clients Served</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">£10M+</div>
+                    <div class="text-gray-600">Legal Risks Mitigated</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">97%</div>
+                    <div class="text-gray-600">Client Retention</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">40+</div>
+                    <div class="text-gray-600">Countries Covered</div>
+                </div>
+            </div>
+        </div>
         <div class="container mx-auto px-4">
             <h3 class="text-center text-gray-500 mb-6">Trusted by leading organizations</h3>
             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -141,6 +185,45 @@
                 <div class="text-2xl font-bold text-gray-700">Legal Teams</div>
                 <div class="text-2xl font-bold text-gray-700">Government</div>
                 <div class="text-2xl font-bold text-gray-700">Universities</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantage Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why We're Different</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th class="p-4 text-left"></th>
+                            <th class="p-4 text-left">AI Legal Hub</th>
+                            <th class="p-4 text-left">Traditional Firms</th>
+                            <th class="p-4 text-left">Tech Consultants</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-4 font-medium">AI Specialization</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Dedicated practice</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Generalist</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Partial</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-4 font-medium">Legal Depth</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Qualified solicitors</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Qualified</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Non-lawyers</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-medium">Technical Understanding</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Engineers on staff</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Limited</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Strong</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -629,6 +712,42 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">How quickly can you start working with us?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>For consulting engagements, we typically begin within 5 business days after contract signing. Training programs can be scheduled 2-4 weeks out depending on your preferred format and our current availability.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">Do you offer ongoing compliance support?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>Yes, we provide quarterly compliance check-ins and regulatory updates as part of our premium consulting packages. We also offer annual retainer agreements for continuous support.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">Can you help with international AI regulations?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>Absolutely. Our team has experience navigating AI regulations across 40+ jurisdictions including the EU AI Act, US state laws, and emerging frameworks in Asia and the Middle East.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-secondary text-white py-8">
         <div class="container mx-auto px-4">
@@ -690,6 +809,25 @@
             // 3. Handle success/error responses appropriately
         });
         
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content && !item.classList.contains('hidden')) {
+                        item.classList.add('hidden');
+                        item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Hub | Expert AI Law Consulting & Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        secondary: '#1e293b',
+                        accent: '#f59e0b',
+                        urgent: '#dc2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .urgent-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .training-card {
+            transition: all 0.3s ease;
+        }
+        .training-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .faq-toggle i {
+            transition: transform 0.3s ease;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .faq-content {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-balance-scale fa-2x text-accent"></i>
+                <span class="text-xl font-bold">AI Legal Hub</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#training" class="nav-link">Training</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-secondary py-2" id="mobile-menu">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="#services" class="py-2 border-b border-gray-600">Services</a>
+                <a href="#training" class="py-2 border-b border-gray-600">Training</a>
+                <a href="#about" class="py-2 border-b border-gray-600">About</a>
+                <a href="#contact" class="py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Navigating the Legal Landscape of AI</h1>
+                <p class="text-xl mb-6">The UK's premier AI legal consultancy helping enterprises navigate complex AI regulations since 2018. Trusted by 150+ clients including FTSE 100 companies and high-growth startups.</p>
+                <div class="flex items-center mb-6">
+                    <div class="flex -space-x-2 mr-4">
+                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-xs font-bold">4.9</div>
+                        <div class="w-8 h-8 rounded-full bg-white/10 border border-white flex items-center justify-center text-xs">★</div>
+                    </div>
+                    <span class="text-white/90">Rated Excellent by 97% of clients</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get in Touch</a>
+                    <a href="#services" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">Our Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-secondary/50 p-8 rounded-xl border border-accent/20">
+                    <h3 class="text-accent font-bold mb-2">🚀 Limited Availability</h3>
+                    <p class="text-white/90 mb-4">Due to overwhelming demand, our expert team is accepting only 3 new consulting clients this quarter.</p>
+                    <div class="w-full bg-secondary rounded-full h-4 mb-2">
+                        <div class="bg-urgent h-4 rounded-full urgent-badge" style="width: 90%"></div>
+                    </div>
+                    <p class="text-xs text-white/70">Only 1 spot remaining - next availability in 3 months</p>
+                    <div class="mt-4 flex items-center">
+                        <div class="mr-3">
+                            <div class="w-10 h-10 rounded-full bg-urgent flex items-center justify-center">
+                                <i class="fas fa-exclamation text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold">High Demand Alert</p>
+                            <p class="text-xs text-white/80">Last quarter we turned away 27 consulting clients due to capacity</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-urgent/10 rounded-lg border border-urgent/30">
+                        <p class="text-urgent text-sm font-bold flex items-center">
+                            <i class="fas fa-clock mr-2"></i>
+                            Last chance: Offer expires in 48 hours
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Partners Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">150+</div>
+                    <div class="text-gray-600">Clients Served</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">£10M+</div>
+                    <div class="text-gray-600">Legal Risks Mitigated</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">97%</div>
+                    <div class="text-gray-600">Client Retention</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">40+</div>
+                    <div class="text-gray-600">Countries Covered</div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-gray-500 mb-6">Trusted by leading organizations</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="text-2xl font-bold text-gray-700">Fortune 500</div>
+                <div class="text-2xl font-bold text-gray-700">Startups</div>
+                <div class="text-2xl font-bold text-gray-700">Legal Teams</div>
+                <div class="text-2xl font-bold text-gray-700">Government</div>
+                <div class="text-2xl font-bold text-gray-700">Universities</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantage Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why We're Different</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th class="p-4 text-left"></th>
+                            <th class="p-4 text-left">AI Legal Hub</th>
+                            <th class="p-4 text-left">Traditional Firms</th>
+                            <th class="p-4 text-left">Tech Consultants</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-4 font-medium">AI Specialization</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Dedicated practice</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Generalist</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Partial</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-4 font-medium">Legal Depth</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Qualified solicitors</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Qualified</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Non-lawyers</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-medium">Technical Understanding</td>
+                            <td class="p-4"><i class="fas fa-check text-accent mr-2"></i> Engineers on staff</td>
+                            <td class="p-4"><i class="fas fa-times text-red-400 mr-2"></i> Limited</td>
+                            <td class="p-4"><i class="fas fa-check text-gray-400 mr-2"></i> Strong</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Our Comprehensive AI Legal Services</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Specialized legal solutions tailored for the unique challenges of artificial intelligence adoption and implementation.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl p-6 shadow-lg transition duration-300 border border-gray-100">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-gavel fa-3x"></i>
+                        </div>
+                        <span class="bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Legal Consulting</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive strategic guidance for enterprises implementing AI solutions, including:</p>
+                    <ul class="text-gray-700 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Full AI implementation legal audit (40+ point checklist)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Regulatory compliance assessment across 12 jurisdictions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Risk management framework development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Third-party vendor AI tool evaluation</span>
+                        </li>
+                    </ul>
+                    <div class="bg-gray-50 -mx-6 -mb-6 p-4 rounded-b-xl border-t">
+                        <p class="text-sm text-gray-500 mb-2">Average engagement: 3-6 months</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">From £14,995/month</span>
+                            <a href="#contact" class="text-accent hover:underline font-medium">Book consultation →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-gray-50 rounded-xl p-6 shadow-md transition duration-300">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-file-contract fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Legal Opinions & Reports</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive legal analysis and documentation to support your AI initiatives and decision-making processes.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Detailed legal opinions on AI matters</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Impact assessments and white papers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Policy drafting and review</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-gray-50 rounded-xl p-6 shadow-md transition duration-300">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-briefcase fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Corporate AI Guidance</h3>
+                    <p class="text-gray-600 mb-4">Specialized support for in-house legal teams and executives navigating AI-related corporate decisions.</p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>AI contract drafting and negotiation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>IP strategy for AI technologies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>M&A due diligence for AI companies</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">AI Legal Training & Workshops</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Empowering legal professionals and business leaders with practical knowledge about AI law and governance.</p>
+            
+            <div class="flex flex-col md:flex-row mb-12 gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Flexible Learning Options</h3>
+                    <p class="text-gray-700 mb-6">We offer our training programs in multiple formats to suit your organization's needs:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-laptop fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Online Courses</h4>
+                                <p class="text-gray-600">Interactive live sessions or self-paced learning modules accessible from anywhere.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-building fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">On-Premise Workshops</h4>
+                                <p class="text-gray-600">Customized training delivered at your location for teams and departments.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-primary text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-users fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Executive Briefings</h4>
+                                <p class="text-gray-600">High-level strategic sessions for C-suite and board members.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-secondary p-6 rounded-xl border border-accent/20">
+                        <h3 class="text-xl font-bold mb-4 text-white">Why Our Training Stands Out</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-accent text-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Practical Playbooks</h4>
+                                    <p class="text-white/80 text-sm">Receive 12+ customizable templates and checklists</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-accent text-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Regulatory Updates</h4>
+                                    <p class="text-white/80 text-sm">Quarterly updates on changing AI regulations</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-accent text-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Post-Training Support</h4>
+                                    <p class="text-white/80 text-sm">2 free consultation hours with our experts</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-urgent/10 rounded-lg border border-urgent/30">
+                            <p class="text-urgent text-sm font-bold flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Next public workshop: June 15-16 (1 seat left)
+                            </p>
+                            <p class="text-white/80 text-xs mt-2">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Next session not until September
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-center mb-8">Popular Training Programs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Training Card 1 -->
+                <div class="training-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="bg-primary text-white p-4">
+                        <h4 class="font-bold text-xl">AI for In-House Counsel</h4>
+                        <p class="text-accent">1-2 day intensive</p>
+                    </div>
+                    <div class="p-6">
+                        <p classtext-gray-700 mb-4">Essential training for corporate legal teams dealing with AI implementation and governance.</p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>AI contract clauses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Liability frameworks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Compliance checklists</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">£2,995 <span class="text-gray-500 line-through">£3,500</span></span>
+                            <a href="#contact" class="bg-accent hover:bg-accent/90 text-primary px-4 py-1 rounded-full text-sm font-bold">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Training Card 2 -->
+                <div class="training-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="bg-primary text-white p-4">
+                        <h4 class="font-bold text-xl">AI Policy Development</h4>
+                        <p class="text-accent">Half-day workshop</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Practical guidance for developing effective AI governance policies within your organization.</p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Ethical AI frameworks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Risk assessment tools</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Implementation roadmaps</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">£995</span>
+                            <a href="#contact" class="text-accent hover:underline">Enquire now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Training Card 3 -->
+                <div class="training-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="bg-primary text-white p-4">
+                        <h4 class="font-bold text-xl">Startup Legal Toolkit</h4>
+                        <p class="text-accent">4-week course</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">Comprehensive legal education for AI startup founders and entrepreneurs.</p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>IP protection strategies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Regulatory navigation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                                <span>Investor-ready documentation</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-primary">From £2,995</span>
+                            <a href="#contact" class="text-accent hover:underline">Enquire now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About AI Legal Hub</h2>
+                    <p class="text-gray-700 mb-4">Founded by leading experts in technology law, AI Legal Hub bridges the gap between rapid AI advancement and the legal frameworks needed to support responsible innovation.</p>
+                    <p class="text-gray-700 mb-6">Our team combines deep legal expertise with practical understanding of AI technologies to provide actionable guidance for organizations of all sizes.</p>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl mb-3 text-primary">Why Choose Us?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-accent mt-1 mr-3"></i>
+                                <span class="text-gray-700">Specialized focus on AI legal implications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-accent mt-1 mr-3"></i>
+                                <span class="text-gray-700">Practical, business-oriented solutions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-accent mt-1 mr-3"></i>
+                                <span class="text-gray-700">Multidisciplinary team of lawyers and technologists</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-accent mt-1 mr-3"></i>
+                                <span class="text-gray-700">Proven track record with diverse clients</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-center text-primary">Our Expertise Areas</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-robot text-3xl text-primary mb-3"></i>
+                                <h4 class="font-bold mb-2">AI Governance</h4>
+                                <p class="text-sm text-gray-600">Policy frameworks and compliance strategies</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-shield-alt text-3xl text-primary mb-3"></i>
+                                <h4 class="font-bold mb-2">Data Protection</h4>
+                                <p class="text-sm text-gray-600">GDPR and privacy compliance for AI systems</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-lightbulb text-3xl text-primary mb-3"></i>
+                                <h4 class="font-bold mb-2">IP Strategy</h4>
+                                <p class="text-sm text-gray-600">Protecting AI innovations and algorithms</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <i class="fas fa-handshake text-3xl text-primary mb-3"></i>
+                                <h4 class="font-bold mb-2">Contracting</h4>
+                                <p class="text-sm text-gray-600">AI-specific terms and liability allocation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="font-bold">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">James Donovan</h4>
+                            <p class="text-gray-600 text-sm">CLO, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"AI Legal Hub's training transformed our legal team's approach to AI contracts. We now have a structured framework that has significantly reduced negotiation times."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="font-bold">SM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Mendez</h4>
+                            <p class="text-gray-600 text-sm">Founder, AI Startup</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"As a non-lawyer founder, their guidance on IP protection and investor negotiations was invaluable. They speak both tech and legal language fluently."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span class="font-bold">AL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Aisha Lawson</h4>
+                            <p class="text-gray-600 text-sm">Head of Legal, FinServ</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Their AI policy workshop helped us develop comprehensive governance frameworks that satisfied both regulators and our innovation team."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get in Touch</h2>
+            <p class="text-center text-blue-100 max-w-2xl mx-auto mb-12">Contact us to discuss your AI legal needs or to learn more about our services and training programs.</p>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="bg-white text-gray-800 rounded-lg shadow-xl p-6">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="form-input w-full px-4 py-2 border rounded-lg focus:border-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="form-input w-full px-4 py-2 border rounded-lg focus:border-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="company" class="block text-gray-700 font-medium mb-2">Company (Optional)</label>
+                            <input type="text" id="company" name="company" class="form-input w-full px-4 py-2 border rounded-lg focus:border-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interest</label>
+                            <select id="service" name="service" class="form-input w-full px-4 py-2 border rounded-lg focus:border-accent">
+                                <option value="">Select an option</option>
+                                <option value="Consulting">Legal Consulting</option>
+                                <option value="Training">Training/Workshops</option>
+                                <option value="Legal Opinion">Legal Opinion/Report</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="form-input w-full px-4 py-2 border rounded-lg focus:border-accent"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg w-full transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-secondary rounded-lg shadow-xl p-6 h-full">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-accent text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <a href="mailto:info@ailegalhub.co.uk" class="hover:underline">info@ailegalhub.co.uk</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-accent text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Location</h4>
+                                    <p>London, United Kingdom</p>
+                                    <p class="text-sm text-blue-200">Services available worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">How quickly can you start working with us?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>For consulting engagements, we typically begin within 5 business days after contract signing. Training programs can be scheduled 2-4 weeks out depending on your preferred format and our current availability.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">Do you offer ongoing compliance support?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>Yes, we provide quarterly compliance check-ins and regulatory updates as part of our premium consulting packages. We also offer annual retainer agreements for continuous support.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100">
+                        <span class="font-medium text-left">Can you help with international AI regulations?</span>
+                        <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p>Absolutely. Our team has experience navigating AI regulations across 40+ jurisdictions including the EU AI Act, US state laws, and emerging frameworks in Asia and the Middle East.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-balance-scale fa-lg text-accent"></i>
+                        <span class="text-xl font-bold">AI Legal Hub</span>
+                    </div>
+                    <p class="text-blue-200 mt-2">Expert legal solutions for the AI age</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <a href="#services" class="hover:text-accent transition duration-300">Services</a>
+                    <a href="#training" class="hover:text-accent transition duration-300">Training</a>
+                    <a href="#about" class="hover:text-accent transition duration-300">About</a>
+                    <a href="#contact" class="hover:text-accent transition duration-300">Contact</a>
+                    <a href="#" class="hover:text-accent transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent transition duration-300">Terms</a>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-6 pt-6 text-center text-blue-200">
+                <p>&copy; 2023 AI Legal Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show an alert and pretend to send it
+            alert(`Thank you, ${name}! Your message has been sent to AI Legal Hub. We'll contact you soon.`);
+            
+            // Reset form
+            contactForm.reset();
+            
+            // In a real implementation, you would:
+            // 1. Send the data to your backend (e.g., via fetch or XMLHttpRequest)
+            // 2. Your backend would then email info@ailegalhub.co.uk
+            // 3. Handle success/error responses appropriately
+        });
+        
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content && !item.classList.contains('hidden')) {
+                        item.classList.add('hidden');
+                        item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
